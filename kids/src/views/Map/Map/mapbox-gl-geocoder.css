@@ -1,0 +1,242 @@
+/* Basics */
+.mapboxgl-ctrl-geocoder,
+.mapboxgl-ctrl-geocoder *,
+.mapboxgl-ctrl-geocoder *:after,
+.mapboxgl-ctrl-geocoder *:before {
+  box-sizing: border-box !important;
+}
+
+.mapboxgl-ctrl-geocoder {
+  font-size: 18px !important;
+  line-height: 24px !important;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
+  position: relative !important;
+  background-color: #fff !important;
+  width: 100% !important;
+  min-width: 240px !important;
+  z-index: 1 !important;
+  border-radius: 4px !important;
+  transition: width .25s, min-width .25s !important;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  font: inherit !important;
+  width: 100% !important;
+  border: 0 !important;
+  background-color: transparent !important;
+  margin: 0 !important;
+  height: 50px !important;
+  color: #404040 !important; /* fallback */
+  color: rgba(0, 0, 0, 0.75) !important;
+  padding: 6px 45px  !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+.mapboxgl-ctrl-geocoder--input::-ms-clear {
+  display: none !important; /* hide input clear button in IE */
+}
+
+.mapboxgl-ctrl-geocoder--input:focus {
+  color: #404040 !important; /* fallback */
+  color: rgba(0, 0, 0, 0.75) !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  outline: thin dotted\8 !important;
+}
+
+.mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--pin-right > * {
+  z-index: 2 !important;
+  position: absolute !important;
+  right: 8px !important;
+  top: 7px !important;
+  display: none !important;
+}
+
+.mapboxgl-ctrl-geocoder,
+.mapboxgl-ctrl-geocoder .suggestions {
+  box-shadow: 0 0 10px 2px rgba(0,0,0,.1) !important;
+}
+
+/* Collapsed */
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl-geocoder--collapsed {
+  width: 50px !important;
+  min-width: 50px !important;
+  transition: width .25s, min-width .25s !important;
+}
+
+/* Suggestions */
+.mapboxgl-ctrl-geocoder .suggestions {
+  background-color: #fff !important;
+  border-radius: 4px !important;
+  left: 0 !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 100% !important;
+  top: 110% !important; /* fallback */
+  top: calc(100% + 6px) !important;
+  z-index: 1000 !important;
+  overflow: hidden !important;
+  font-size: 15px !important;
+}
+
+.mapboxgl-ctrl-bottom-left .suggestions,
+.mapboxgl-ctrl-bottom-right .suggestions {
+  top: auto !important;
+  bottom: 100% !important;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions > li > a {
+  cursor: default !important;
+  display: block !important;
+  padding: 6px 12px !important;
+  color: #404040 !important;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions > .active > a,
+.mapboxgl-ctrl-geocoder .suggestions > li > a:hover {
+  color: #404040 !important;
+  background-color: #f3f3f3 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.mapboxgl-ctrl-geocoder--suggestion-title {
+  font-weight: bold !important;
+}
+
+.mapboxgl-ctrl-geocoder--suggestion-title,
+.mapboxgl-ctrl-geocoder--suggestion-address {
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+/* Icons */
+.mapboxgl-ctrl-geocoder--icon {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  speak: none !important;
+  fill: #757575 !important;
+  top: 15px !important;
+}
+
+.mapboxgl-ctrl-geocoder--icon-search {
+  position: absolute !important;
+  top: 13px !important;
+  left: 12px !important;
+  width: 23px !important;
+  height: 23px !important;
+}
+
+.mapboxgl-ctrl-geocoder--button {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  cursor: pointer !important;
+  background: #fff !important;
+  line-height: 1 !important;
+}
+
+.mapboxgl-ctrl-geocoder--icon-close {
+  width: 20px ;
+  height: 20px ;
+  margin-top: 8px ;
+  margin-right: 3px ;
+}
+
+.mapboxgl-ctrl-geocoder--button:hover .mapboxgl-ctrl-geocoder--icon-close {
+  fill: #909090;
+}
+
+.mapboxgl-ctrl-geocoder--icon-loading {
+  width: 26px !important;
+  height: 26px !important;
+  margin-top: 5px !important;
+  margin-right: 0px !important;
+  -moz-animation: rotate 0.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95) !important;
+  -webkit-animation: rotate 0.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95) !important;
+  animation: rotate 0.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95) !important;
+}
+
+/* Animation */
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0) !important;
+    transform: rotate(0) !important;
+  }
+  to {
+    -webkit-transform: rotate(360deg) !important;
+    transform: rotate(360deg) !important;
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0) !important;
+    transform: rotate(0) !important;
+  }
+  to {
+    -webkit-transform: rotate(360deg) !important;
+    transform: rotate(360deg) !important;
+  }
+}
+
+/* Media queries*/
+@media screen and (min-width: 640px) {
+
+  .mapboxgl-ctrl-geocoder.mapboxgl-ctrl-geocoder--collapsed {
+    width: 36px !important;
+    min-width: 36px !important;
+  }
+
+  .mapboxgl-ctrl-geocoder {
+    width: 33.3333% !important;
+    font-size: 15px !important;
+    line-height: 20px !important;
+    max-width: 360px !important;
+  }
+  .mapboxgl-ctrl-geocoder .suggestions {
+    font-size: 13px !important;
+  }
+
+  .mapboxgl-ctrl-geocoder--icon {
+    top: 8px !important;
+  }
+
+  .mapboxgl-ctrl-geocoder--icon-close {
+    width: 16px ;
+    height: 16px ;
+    margin-top: 3px ;
+    margin-right: 0;
+  }
+
+  .mapboxgl-ctrl-geocoder--icon-search {
+    left: 7px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .mapboxgl-ctrl-geocoder--input {
+    height: 36px !important;
+    padding: 6px 35px !important;
+  }
+
+  .mapboxgl-ctrl-geocoder--icon-loading {
+    width: 26px !important;
+    height: 26px !important;
+    margin-top: -2px !important;
+    margin-right: -5px !important;
+  }
+
+  .mapbox-gl-geocoder--error{
+    color:#909090 !important;
+    padding: 6px 12px !important;
+    font-size: 16px !important;
+    text-align: center
+  }
+
+}
